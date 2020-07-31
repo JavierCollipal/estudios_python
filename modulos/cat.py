@@ -4,4 +4,4 @@ class Cat:
     age = 0
 
     def meow(self):
-        print(f"meow soy {self.name}, un gato creado con OOP")
+        print(f"meow soy {self.name}, un gato creado con OOP y importado del paquete modulos")
