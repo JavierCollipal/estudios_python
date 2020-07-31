@@ -1,10 +1,11 @@
-from oop import Animal
+# con este import si funciona que podamos definirlo como clase padre
+from oop.Animal import Animal
 
 """
 Liskov Substitution Principle
 
-Animal es la super clase de gato, tambien imlementaremos una clase perro con esta Super clase
-Con esto obligamos a implementar una función que tienen en comun: leg_count
+Animal es la super clase de gato.
+Con esto obligamos a implementar una función que tienen en comun con algun otro animal: leg_count
 
 """
 
@@ -13,10 +14,11 @@ class CatSolid(Animal):
     name = "lanita"
     breed = "angora"
     age = 1
+    legs = 4
     """"
     Dependency Inversion Principle
     
-    Si esta clase ocupa otra clase para solucionar problemas, podemos iyectar la segunda clase mediante el constructor.
+    Si esta clase ocupa otra clase para solucionar problemas, podemos inyectar la segunda clase mediante el constructor.
     
     Esto sirve mucho a la hora de hacer unit testing, ya que mediante mock puedes tener acceso a toda la cobertura de funciones de esta clase.
     Ej: Necesito probar una clase catService, este hace uso de un catModel para llamar a la base de datos.
@@ -36,4 +38,12 @@ class CatSolid(Animal):
 
     def meow(self):
         print(
-            f"meow soy {self.name}, un gato creado con OOP y los principios solid, voy a ocupar mi gatopistola que alguien me regalo")
+            f"meow soy {self.name}, un gato creado con OOP y los principios solid, voy a ocupar mi gatopistola que alguien me regalo "
+            f"tambien voy a contar mis patas")
+
+    def shot_cat_gun(self):
+        self.cat_gun.fire()
+
+    def leg_count(self):
+        print(f"este es mi numero de patas {self.legs}")
+        pass
