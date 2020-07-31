@@ -1,0 +1,1 @@
+from funcional.reduce import *

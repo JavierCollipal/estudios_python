@@ -11,10 +11,6 @@ Con esto obligamos a implementar una función que tienen en comun con algun otro
 
 
 class CatSolid(Animal):
-    name = "lanita"
-    breed = "angora"
-    age = 1
-    legs = 4
     """"
     Dependency Inversion Principle
     
@@ -33,7 +29,11 @@ class CatSolid(Animal):
     que necesite a catModel. 
     """""
 
-    def __init__(self, cat_gun):
+    def __init__(self, name, age, breed, legs, cat_gun):
+        self.name = name
+        self.age = age
+        self.breed = breed
+        self.legs = legs
         self.cat_gun = cat_gun
 
     def meow(self):
